@@ -1,9 +1,11 @@
-x = int(input(''))
-def  factorial(x):
-    if x == 0:
-        return 1
-    elif x < 0 :
-        return ('Tidak terdefinisi')
-    else:
-        return (x * factorial(x-1))
-print(factorial(x))
+a = input()
+b = input()
+
+try:
+    c = open(f"{a}.txt","r") 
+    d = c.read()
+    with open(f"{b}.txt","w") as file:
+        file.write(d)
+        print("berhasil")
+except:
+    print("tidak berhasil")
