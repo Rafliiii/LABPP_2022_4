@@ -1,17 +1,23 @@
+class Kubus:
+    def __init__(self, lebar, tinggi, panjang, massa):
+        self.lebar = lebar 
+        self.tinggi = tinggi
+        self.panjang = panjang
+        self.massa = massa
+    def setMassa(self, massa) :
+         self.massa = massa
+    def getMassaJenis(self):
+        return self.massa / (self.panjang * self.lebar * self.tinggi)
+panjang = float(input())
+lebar = float(input())
+tinggi = float(input())
+massa = float(input())
 
-a = input()
-b = input()
-try:
-    with open(f"{a}.txt","r") as zoom:
-        files = zoom.readlines()
-        n = []
-        files[-1] += "/n"
-        for x in files :
-            n.append(len(x))
-            with open(f"{b}.txt","w") as copy:
-                for i in files:
-                    copy.write(i.rjust(max(n)))
-        print(len(x))
-    print("berhasil")
-except:
-    print("tidak berhasil")
+
+kubus = Kubus(lebar, tinggi, panjang, massa)
+
+kubus.setMassa(massa)
+print("Massa Jenis =", kubus.getMassaJenis())
+
+kubus.setMassa(massa*2)
+print("Massa Jenis =", kubus.getMassaJenis())

@@ -1,26 +1,31 @@
-import re
-
-s = input('')
-regex1 =r'[a-z?A-Z?0?2?4?6?8?]'
-regex2 =r'[1?3?5?7?9? ?]'
-
-result1 = re.findall(regex2, s[0:40])
-print(result1)
-
-if result1:
-    print('false')
-    exit() 
-
-result2 = re.findall(regex1, s[40:45])
-print(result2)
-if result2:
-    print('false')
-    exit()
-
-if len(s) == 45:
-    print('true')
-
-
+class Orang:
+    def __init__(self, nama, umur, gender,game):
+        self.nama = nama
+        self.umur = umur
+        self.gender = gender
+        self.game = game
+    def getAge(self,umur):
+        print(umur)
+    def getName(self,nama):
+        print(nama)
+    def getGender(self,gender):
+        if gender == True:
+            gender = 'Male'
+        else:
+            gender = 'Female'
+        print(gender)
+    def bermain(self, game):
+        print(f'{nama} sedang bermain game {game}')
+nama = input('Masukkan nama: ').lower()
+umur = int(input('Masukkan umur: '))
+gender = input('you male? True or False: ').lower()
+if gender == 'true':
+    gender = bool(True)
 else:
-    print('false')
-
+    gender = bool(False)
+game = input('Masukkan game: ')
+data_diri = Orang(nama, umur, gender, game)
+data_diri.getName(nama)
+data_diri.getAge(umur)
+data_diri.getGender(gender)
+data_diri.bermain(game)
