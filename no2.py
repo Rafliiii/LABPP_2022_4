@@ -1,23 +1,29 @@
-class Kubus:
-    def __init__(self, lebar, tinggi, panjang, massa):
-        self.lebar = lebar 
-        self.tinggi = tinggi
-        self.panjang = panjang
-        self.massa = massa
-    def setMassa(self, massa) :
-         self.massa = massa
-    def getMassaJenis(self):
-        return self.massa / (self.panjang * self.lebar * self.tinggi)
-panjang = float(input())
-lebar = float(input())
-tinggi = float(input())
-massa = float(input())
+from Zoo import Kucing, Anjing
+kucing = Kucing("oren")
+anjing = Anjing("coklat")
+
+print("-"*30)
+print("--- Cara kucing bergerak ---")
+kucing.bergerak()
+print("-"*30)
+print("--- Cara anjing bergerak ---")
+print("-"*30)
+anjing.bergerak()
+
+print("-"*30)
+print("--- Cara kucing bertarung ---")
+kucing.bertarung()
+print("-"*30)
+
+print("--- Cara anjing bertarung ---")
+anjing.bertarung()
+print("-"*30)
+
+print("Kucing serang anjing")
+print("--- Darah anjing sebelum diserang ---")
+anjing.cekDarah()
+kucing.serang(anjing)
+print("--- Darah anjing setelah diserang ---")
+anjing.cekDarah()
 
 
-kubus = Kubus(lebar, tinggi, panjang, massa)
-
-kubus.setMassa(massa)
-print("Massa Jenis =", kubus.getMassaJenis())
-
-kubus.setMassa(massa*2)
-print("Massa Jenis =", kubus.getMassaJenis())
